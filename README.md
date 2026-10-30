@@ -1,3 +1,9 @@
+Rahul Kumar – Data Analyst Portfolio
+
+🚀 Live Portfolio: View My Portfolio
+
+A modern, interactive portfolio built using React, Vite, and Three.js.
+
 # Rahul Kumar – Data Analyst Portfolio
 
 A modern, interactive portfolio built using **React, Vite, and Three.js**. It showcases data analytics projects, technical skills, interactive visualizations, and professional experience through a 3D-powered interface.

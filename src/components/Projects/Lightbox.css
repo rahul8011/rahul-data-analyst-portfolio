@@ -1,0 +1,82 @@
+/* ==========================================================
+   LIGHTBOX
+   Screenshot ko full screen dekhne wala popup.
+   ========================================================== */
+
+/* lightbox */
+.lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  background: rgba(3, 5, 12, 0.92);
+  backdrop-filter: blur(8px);
+  display: grid;
+  place-items: center;
+  padding: 56px 72px;
+  animation: fadein 0.25s ease;
+}
+.lightbox figure {
+  margin: 0;
+  max-width: min(1500px, 100%);
+  text-align: center;
+}
+.lightbox img {
+  max-height: 80vh;
+  width: auto;
+  margin: 0 auto;
+  border-radius: 12px;
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.6);
+}
+.lightbox figcaption {
+  margin-top: 14px;
+  color: #c3cde6;
+  font-size: 14.5px;
+}
+.lightbox figcaption span {
+  color: #7d89a8;
+}
+.lb-close,
+.lb-nav {
+  position: absolute;
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  width: 46px;
+  height: 46px;
+  font-size: 22px;
+  display: grid;
+  place-items: center;
+  transition: background 0.2s;
+}
+.lb-close:hover,
+.lb-nav:hover {
+  background: rgba(255, 255, 255, 0.22);
+}
+.lb-close {
+  top: 20px;
+  right: 22px;
+}
+.lb-nav {
+  top: 50%;
+  margin-top: -23px;
+  font-size: 30px;
+  padding-bottom: 4px;
+}
+.lb-nav.left {
+  left: 18px;
+}
+.lb-nav.right {
+  right: 18px;
+}
+
+/* ---------- responsive ---------- */
+@media (max-width: 560px) {
+  .lightbox {
+    padding: 64px 14px 30px;
+  }
+  .lb-nav {
+    top: auto;
+    bottom: 14px;
+  }
+}

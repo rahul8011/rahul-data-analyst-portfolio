@@ -1,0 +1,64 @@
+/* ==========================================================
+   BUTTONS
+   .btn (primary / ghost / small) aur round icon button.
+   ========================================================== */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 22px;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  font-weight: 600;
+  font-size: 15px;
+  transition: transform 0.18s, box-shadow 0.18s, background 0.18s, border-color 0.18s;
+  background: transparent;
+}
+.btn:hover {
+  transform: translateY(-2px);
+}
+.btn.primary {
+  background: linear-gradient(135deg, var(--cyan), var(--violet));
+  color: #fff;
+  border-color: transparent;
+  box-shadow: 0 10px 28px -10px var(--violet);
+}
+.btn.primary:hover {
+  box-shadow: 0 16px 34px -10px var(--cyan);
+}
+.btn.ghost {
+  background: var(--surface);
+  backdrop-filter: blur(8px);
+}
+.btn.ghost:hover {
+  border-color: var(--cyan);
+}
+.btn.small {
+  padding: 8px 16px;
+  font-size: 14px;
+}
+.btn-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  align-items: center;
+}
+.icon-btn {
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  font-size: 18px;
+  display: grid;
+  place-items: center;
+  transition: border-color 0.2s, transform 0.2s;
+}
+.icon-btn:hover {
+  border-color: var(--cyan);
+  transform: rotate(12deg);
+}
+.burger {
+  display: none;
+}

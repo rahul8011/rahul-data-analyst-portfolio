@@ -1,0 +1,141 @@
+/* ==========================================================
+   HERO
+   Pehli screen: 3D chart ke saath naam aur typing line.
+   ========================================================== */
+
+.hero {
+  position: relative;
+  min-height: 100vh;
+  min-height: 100svh;
+  display: flex;
+  align-items: center;
+  padding: 110px 0 70px;
+  overflow: hidden;
+}
+.hero3d {
+  position: absolute;
+  top: 0;
+  right: -5%;
+  bottom: 0;
+  width: 60%;
+  z-index: 0;
+}
+.hero-fade {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background: linear-gradient(90deg, var(--bg) 30%, color-mix(in srgb, var(--bg) 55%, transparent) 46%, transparent 62%), linear-gradient(0deg, var(--bg) 0%, transparent 22%);
+}
+.hero-inner {
+  position: relative;
+  z-index: 2;
+  pointer-events: none;
+}
+.hero-copy {
+  max-width: 600px;
+  pointer-events: auto;
+}
+
+.eyebrow.pulse {
+  padding: 7px 14px;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: var(--surface);
+  backdrop-filter: blur(8px);
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+.eyebrow.pulse::before {
+  content: '';
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--green);
+  box-shadow: 0 0 0 0 var(--green);
+  animation: ping 2s infinite;
+}
+@keyframes ping {
+  70% {
+    box-shadow: 0 0 0 10px transparent;
+  }
+  100% {
+    box-shadow: 0 0 0 0 transparent;
+  }
+}
+.hero h1 {
+  font-size: clamp(42px, 7.2vw, 84px);
+  margin: 22px 0 14px;
+  font-weight: 700;
+}
+.grad {
+  background: linear-gradient(100deg, var(--cyan), var(--violet) 55%, var(--amber));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+.role {
+  font-family: var(--display);
+  font-size: clamp(20px, 2.6vw, 28px);
+  color: var(--muted);
+  min-height: 1.4em;
+}
+.typed {
+  color: var(--text);
+  font-weight: 600;
+}
+
+.hero-sub {
+  margin: 20px 0 30px;
+  font-size: 18px;
+  color: var(--muted);
+  max-width: 520px;
+}
+.hint {
+  margin-top: 30px;
+  font-size: 13.5px;
+  color: var(--muted);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.mouse {
+  width: 16px;
+  height: 24px;
+  border: 2px solid var(--muted);
+  border-radius: 9px;
+  position: relative;
+}
+.mouse::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 4px;
+  width: 3px;
+  height: 5px;
+  margin-left: -1.5px;
+  border-radius: 2px;
+  background: var(--cyan);
+  animation: wheel 1.6s infinite;
+}
+@keyframes wheel {
+  to {
+    transform: translateY(7px);
+    opacity: 0;
+  }
+}
+
+/* ---------- responsive ---------- */
+@media (max-width: 1020px) {
+  .hero3d {
+    width: 100%;
+    right: 0;
+    top: auto;
+    height: 72%;
+    opacity: 0.7;
+  }
+  .hero-fade {
+    background: linear-gradient(90deg, color-mix(in srgb, var(--bg) 85%, transparent) 10%, transparent 90%), linear-gradient(0deg, var(--bg) 0%, transparent 22%);
+  }
+}

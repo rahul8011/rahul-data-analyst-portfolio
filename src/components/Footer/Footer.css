@@ -1,0 +1,21 @@
+/* ==========================================================
+   FOOTER
+   Sabse neeche ki line.
+   ========================================================== */
+
+.footer {
+  margin-top: 110px;
+  border-top: 1px solid var(--border);
+  padding: 28px 0;
+  color: var(--muted);
+  font-size: 14px;
+}
+.footer .wrap {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 12px;
+}
+.footer a:hover {
+  color: var(--cyan);
+}

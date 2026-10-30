@@ -1,0 +1,50 @@
+/* ==========================================================
+   STATS
+   Count-up numbers wali strip.
+   ========================================================== */
+
+.stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1px;
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  overflow: hidden;
+  background: var(--border);
+  margin-top: -20px;
+  position: relative;
+  z-index: 3;
+  box-shadow: var(--shadow);
+}
+.stat {
+  background: color-mix(in srgb, var(--bg2) 92%, transparent);
+  padding: 26px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.stat b {
+  font-family: var(--display);
+  font-size: clamp(28px, 3.4vw, 42px);
+  background: linear-gradient(120deg, var(--cyan), var(--violet));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  font-variant-numeric: tabular-nums;
+}
+.stat span {
+  color: var(--muted);
+  font-size: 14px;
+}
+
+/* ---------- responsive ---------- */
+@media (max-width: 1020px) {
+  .stats {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 560px) {
+  .stat {
+    padding: 18px 16px;
+  }
+}

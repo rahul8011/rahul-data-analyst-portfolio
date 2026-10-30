@@ -1,0 +1,137 @@
+/* ==========================================================
+   ABOUT
+   Photo card (3D tilt) aur intro text.
+   ========================================================== */
+
+.about {
+  display: grid;
+  grid-template-columns: 0.8fr 1.2fr;
+  gap: 64px;
+  align-items: center;
+}
+.photo-wrap {
+  display: grid;
+  place-items: center;
+  padding: 20px;
+}
+.photo-card {
+  position: relative;
+  width: min(100%, 360px);
+  aspect-ratio: 4 / 5;
+  border-radius: 28px;
+  overflow: visible;
+  transition: transform 0.18s ease-out;
+  transform-style: preserve-3d;
+  background: linear-gradient(145deg, var(--cyan), var(--violet) 55%, var(--amber));
+  padding: 4px;
+  box-shadow: var(--shadow), 0 0 80px -20px var(--violet);
+}
+.photo-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 25px;
+  background: #fff;
+}
+.glare {
+  position: absolute;
+  inset: 4px;
+  border-radius: 25px;
+  pointer-events: none;
+  background: radial-gradient(260px circle at var(--gx, 50%) var(--gy, 0%), rgba(255, 255, 255, 0.28), transparent 60%);
+  mix-blend-mode: overlay;
+}
+.float {
+  position: absolute;
+  padding: 8px 16px;
+  border-radius: 12px;
+  font-family: var(--mono);
+  font-size: 13px;
+  font-weight: 500;
+  background: color-mix(in srgb, var(--bg2) 88%, transparent);
+  border: 1px solid var(--border);
+  backdrop-filter: blur(10px);
+  box-shadow: var(--shadow);
+  transform: translateZ(60px);
+  animation: floaty 5s ease-in-out infinite;
+}
+.f1 {
+  top: 8%;
+  left: -14%;
+  color: var(--amber);
+}
+.f2 {
+  bottom: 9%;
+  right: -14%;
+  color: var(--cyan);
+  animation-delay: 1s;
+}
+.f3 {
+  bottom: 9%;
+  left: -8%;
+  color: var(--violet);
+  animation-delay: 2s;
+}
+.f4 {
+  top: 8%;
+  right: -14%;
+  color: var(--green);
+  animation-delay: 1.5s;
+}
+@keyframes floaty {
+  50% {
+    translate: 0 -10px;
+  }
+}
+.about-text .big {
+  font-size: clamp(18px, 2vw, 22px);
+  line-height: 1.65;
+  color: var(--text);
+}
+.facts {
+  margin: 30px 0;
+  display: grid;
+  gap: 14px;
+}
+.facts div {
+  display: grid;
+  grid-template-columns: 110px 1fr;
+  gap: 16px;
+  padding-bottom: 14px;
+  border-bottom: 1px dashed var(--border);
+}
+.facts dt {
+  font-family: var(--mono);
+  font-size: 12.5px;
+  color: var(--cyan);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  padding-top: 3px;
+}
+.facts dd {
+  margin: 0;
+}
+
+/* ---------- responsive ---------- */
+@media (max-width: 1020px) {
+  .about {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+}
+@media (max-width: 560px) {
+  .facts div {
+    grid-template-columns: 1fr;
+    gap: 2px;
+  }
+  .f1 {
+    left: -6%;
+  }
+  .f2 {
+  right: -4%;
+}
+  .f4 {
+  right: -4%;
+  top: 8%;
+}
+}

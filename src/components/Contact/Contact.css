@@ -1,0 +1,87 @@
+/* ==========================================================
+   CONTACT
+   Contact links aur form.
+   ========================================================== */
+
+.contact {
+  display: grid;
+  grid-template-columns: 1fr 1.1fr;
+  gap: 28px;
+}
+.c-links {
+  display: grid;
+  gap: 14px;
+  align-content: start;
+}
+.c-link {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: 18px 22px;
+  border-radius: 16px;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  transition: 0.22s;
+  overflow-wrap: anywhere;
+}
+.c-link:hover {
+  transform: translateX(6px);
+  border-color: var(--cyan);
+  box-shadow: var(--shadow);
+}
+.c-link span {
+  font-family: var(--mono);
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--cyan);
+}
+.c-link b {
+  font-family: var(--display);
+  font-size: 18px;
+  font-weight: 600;
+}
+.c-form {
+  display: grid;
+  gap: 16px;
+  padding: 26px;
+  border-radius: 20px;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  backdrop-filter: blur(8px);
+  align-content: start;
+}
+.c-form label {
+  display: grid;
+  gap: 6px;
+  font-size: 13.5px;
+  color: var(--muted);
+  font-weight: 500;
+}
+.c-form input,
+.c-form textarea {
+  font: inherit;
+  color: var(--text);
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 12px 14px;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  resize: vertical;
+}
+.c-form input:focus,
+.c-form textarea:focus {
+  outline: none;
+  border-color: var(--cyan);
+  box-shadow: 0 0 0 4px color-mix(in srgb, var(--cyan) 20%, transparent);
+}
+.c-form .btn {
+  justify-self: start;
+}
+
+/* ---------- responsive ---------- */
+@media (max-width: 1020px) {
+  .contact {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,45 @@
+/* ==========================================================
+   SKILLS
+   3D skill sphere aur skill tags.
+   ========================================================== */
+
+.skills {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+  align-items: center;
+}
+.sphere {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1;
+  max-height: 560px;
+  border-radius: 28px;
+  border: 1px solid var(--border);
+  background: radial-gradient(circle at 50% 45%, color-mix(in srgb, var(--violet) 14%, transparent), transparent 70%), var(--surface);
+  overflow: hidden;
+  touch-action: pan-y;
+}
+.sphere canvas {
+  display: block;
+}
+.skill-groups {
+  display: grid;
+  gap: 22px;
+}
+.sg h4 {
+  font-size: 13px;
+  font-family: var(--mono);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--cyan);
+  margin-bottom: 10px;
+  font-weight: 500;
+}
+
+/* ---------- responsive ---------- */
+@media (max-width: 1020px) {
+  .skills {
+    grid-template-columns: 1fr;
+  }
+}

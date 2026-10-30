@@ -1,0 +1,81 @@
+/* ==========================================================
+   JOURNEY
+   Experience + education timeline.
+   ========================================================== */
+
+.timeline {
+  list-style: none;
+  position: relative;
+  display: grid;
+  gap: 26px;
+  padding-left: 38px;
+  max-width: 860px;
+}
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 11px;
+  top: 8px;
+  bottom: 8px;
+  width: 2px;
+  background: linear-gradient(var(--cyan), var(--violet), var(--amber));
+  border-radius: 2px;
+}
+.timeline > li {
+  position: relative;
+}
+.node {
+  position: absolute;
+  left: -36px;
+  top: 26px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: var(--bg);
+  border: 3px solid var(--cyan);
+  box-shadow: 0 0 0 5px color-mix(in srgb, var(--cyan) 18%, transparent);
+}
+.node.edu {
+  border-color: var(--amber);
+  box-shadow: 0 0 0 5px color-mix(in srgb, var(--amber) 18%, transparent);
+}
+.t-card {
+  border: 1px solid var(--border);
+  background: var(--surface);
+  backdrop-filter: blur(8px);
+  border-radius: 18px;
+  padding: 24px 26px;
+  transition: transform 0.25s, border-color 0.25s, box-shadow 0.25s;
+}
+.t-card:hover {
+  transform: translateX(6px);
+  border-color: var(--cyan);
+  box-shadow: var(--shadow);
+}
+.when {
+  font-family: var(--mono);
+  font-size: 12.5px;
+  color: var(--amber);
+  letter-spacing: 0.04em;
+}
+.t-card h3 {
+  font-size: 22px;
+  margin: 8px 0 4px;
+}
+.org {
+  color: var(--cyan);
+  font-weight: 500;
+  margin-bottom: 14px;
+}
+.t-card ul {
+  list-style: disc;
+  padding-left: 20px;
+  display: grid;
+  gap: 6px;
+  margin-bottom: 16px;
+  color: var(--muted);
+  font-size: 15px;
+}
+.score {
+  color: var(--muted);
+}
